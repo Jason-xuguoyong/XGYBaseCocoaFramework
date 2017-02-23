@@ -1,0 +1,46 @@
+//
+//  PrefixHeader.pch
+//  XGYEvaluationRCode
+//
+//  Created by Jason on 2017/2/8.
+//  Copyright © 2017年 Jason. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#ifdef __OBJC__
+
+#pragma mark -------全局头文件----------
+#import "GlobalHeaderFile.h"
+
+#pragma mark -------工具类宏定义---------
+#import "MacroDefinitionForTool.h"
+
+#pragma mark -------工程的外观设置-------
+#import "AppearanceConfiger.h"
+
+#pragma mark -------工程的消息提示语------
+#import "MessageForUser.h"
+
+#pragma mark -------第三方库的常量配置-----
+#import "ThirdMacroDefinition.h"
+
+#pragma mark -------网络请求的网站-------
+#import "XGYAddressURL.h"
+
+#endif
+
+#define debugView(view) view.backgroundColor = [UIColor redColor]
+
+#pragma mark -------调试相关的一些宏定义-------
+#ifdef DEBUG
+#define XGYString [NSString stringWithFormat:@"%s", __FILE__].lastPathComponent
+#define XGYDebugLog(...) printf("%s: %s 第%d行: %s\n\n",[[NSString lr_stringDate] UTF8String], [XGYString UTF8String] ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String]);
+
+#else
+#define XGYDebugLog(...)
+#endif
+
+#endif /* PrefixHeader_pch */
