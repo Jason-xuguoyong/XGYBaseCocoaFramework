@@ -16,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+    
+    
+    
+    
      [XGYMessageTool showLoadingHUD];
     self.webView = [[UIWebView alloc] init];
     [self.view addSubview:self.webView];
